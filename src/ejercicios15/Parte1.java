@@ -32,9 +32,7 @@ public class Parte1 {
             
             
         }
-        //if(mapa.containsKey(' ')){
         mapa.remove(' ');
-        //}
         System.out.println(mapa);
     }
     
