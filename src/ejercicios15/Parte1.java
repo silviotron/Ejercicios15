@@ -21,8 +21,7 @@ public class Parte1 {
         Map<Character, Integer> mapa = new TreeMap<>();
         sc = new java.util.Scanner(System.in);        
         System.out.print("Introduce la primera frase: ");
-        String s = sc.nextLine();
-        char[] array = s.toLowerCase().toCharArray();
+        char[] array = sc.nextLine().toLowerCase().toCharArray();
         for (int i = 0; i < array.length; i++) {
             if(mapa.containsKey(array[i])){
                 mapa.put(array[i], mapa.get(array[i]) + 1);
