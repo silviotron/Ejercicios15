@@ -25,6 +25,10 @@ public class Persona {
         return edad;
     }
 
+    public int getNota() {
+        return nota;
+    }
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + " edad: " + edad + " Dni: " + dni + " nota: " + nota;

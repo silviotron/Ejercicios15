@@ -5,7 +5,11 @@
  */
 package ejercicios15;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 /**
@@ -26,10 +30,18 @@ public class Parte2 {
         mapa.put('u', 0);
         sc = new java.util.Scanner(System.in);        
         System.out.print("Introduce la primera frase: ");
-        char[] array = sc.nextLine().toLowerCase().toCharArray();
+        String[] array = sc.nextLine().toLowerCase().split(" +");
+        ArrayList<HashSet> lista = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
-            if(mapa.containsKey(array[i])){
-                mapa.put(array[i], mapa.get(array[i]) + 1);
+            lista.add(new HashSet<Character>());
+            Collections.addAll(lista.get(i), array[i].toCharArray());
+            
+            
+        }
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {                
+                lista.get(j).;
+                
             }
             
         }

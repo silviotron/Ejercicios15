@@ -7,6 +7,7 @@ package ejercicios15;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
+import java.util.Iterator;
 
 /**
  *
@@ -32,8 +33,13 @@ public class Parte4 {
             
             
         } 
-        System.out.println(mapa);
-        System.out.println(mapa);
+        Iterator<Character> it = mapa.keySet().iterator();
+        
+        while (it.hasNext()) {
+            Character next = it.next();
+            System.out.println(next.toString().toUpperCase() + ": " + mapa.get(next));
+            
+        }
         
     }
     
