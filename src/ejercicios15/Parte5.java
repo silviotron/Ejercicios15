@@ -27,7 +27,6 @@ public class Parte5 {
         sc = new java.util.Scanner(System.in); 
         System.out.print("Introduce un texto: ");
         String[] array = sc.nextLine().toLowerCase().replaceAll("[^a-z\\d\\s]", "").split("\\s+");
-        int contador = 0;
         char letra;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length(); j++) {
