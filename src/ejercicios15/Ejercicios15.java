@@ -21,11 +21,12 @@ public class Ejercicios15 {
             
             seleccion = "";
             System.out.println("****************");
-            System.out.println("*1. Parte 1    *");
-            System.out.println("*2. Parte 2    *");
-            System.out.println("*3. Parte 3    *");
-            System.out.println("*4. Parte 4    *");
-            System.out.println("*0. Salir      *");
+            System.out.println("* 1. Parte 1   *");
+            System.out.println("* 2. Parte 2   *");
+            System.out.println("* 3. Parte 3   *");
+            System.out.println("* 4. Parte 4   *");
+            System.out.println("* 5. Parte 5   *");
+            System.out.println("* 0. Salir     *");
             System.out.println("****************");
             seleccion = sc.nextLine();
             switch(seleccion){
@@ -40,6 +41,9 @@ public class Ejercicios15 {
                     break;
                 case "4":
                     Parte4.main(args);
+                    break;                    
+                case "5":
+                    Parte5.main(args);
                     break;                    
                 case "0":
                     break;

@@ -5,9 +5,10 @@
  */
 package ejercicios15;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.List;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 /**
  *
@@ -20,24 +21,20 @@ public class Parte4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        TreeMap<Character, ArrayList<String>> mapa = new TreeMap<>();
+        HashMap<Character, List<String>> mapa = new HashMap<>();
         sc = new java.util.Scanner(System.in); 
         System.out.printf("introduce una string: ");
-        String[] array = sc.nextLine().toLowerCase().split(" +");
+        String[] array = sc.nextLine().trim().toLowerCase().split(" +");
         for (int i = 0; i < array.length; i++) {
-            if(mapa.containsKey(array[i].charAt(0))){
-                mapa.get(array[i].charAt(0)).add(array[i]);
-            }else{
-                mapa.put(array[i].charAt(0), new ArrayList<>());
+            if(!mapa.containsKey(array[i].charAt(0))){
+                mapa.put(array[i].charAt(0), new LinkedList<>());
             }
-            
-            
+                mapa.get(array[i].charAt(0)).add(array[i]);
         } 
         Iterator<Character> it = mapa.keySet().iterator();
-        
         while (it.hasNext()) {
             Character next = it.next();
-            System.out.println(next.toString().toUpperCase() + ": " + mapa.get(next));
+            System.out.println(next.toString().toUpperCase() + ":" + mapa.get(next));
             
         }
         

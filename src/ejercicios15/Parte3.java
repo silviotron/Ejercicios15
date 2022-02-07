@@ -23,15 +23,15 @@ public class Parte3 {
         Persona p2 = new Persona("53029348", "luis", 3 ,3);
         Persona p3 = new Persona("907342", "juan.", 3, 3 );
         Persona p4 = new Persona("698786", "pepe",3, 3);
-        TreeMap<String, ArrayList<Persona>> mapa = new TreeMap<>();
-        mapa.put("aprobado", new ArrayList<>());
-        mapa.put("suspenso", new ArrayList<>());
-        mapa.get("aprobado").add(p1);
-        mapa.get("aprobado").add(p2);
-        mapa.get("suspenso").add(p3);
-        mapa.get("suspenso").add(p4);
-        System.out.println(mapa.get("aprobado"));
-        System.out.println(mapa.get("suspenso"));
+        TreeMap<Boolean, ArrayList<Persona>> mapa = new TreeMap<>();
+        mapa.put(true, new ArrayList<>());
+        mapa.put(false, new ArrayList<>());
+        mapa.get(true).add(p1);
+        mapa.get(true).add(p2);
+        mapa.get(false).add(p3);
+        mapa.get(false).add(p4);
+        System.out.println(mapa.get(true));
+        System.out.println(mapa.get(false));
         
     }
     

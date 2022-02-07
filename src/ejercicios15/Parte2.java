@@ -6,6 +6,7 @@
 package ejercicios15;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
@@ -31,16 +32,21 @@ public class Parte2 {
         sc = new java.util.Scanner(System.in);        
         System.out.print("Introduce la primera frase: ");
         String[] array = sc.nextLine().toLowerCase().split(" +");
-        ArrayList<HashSet> lista = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<>();
+        HashSet<Character> set = new HashSet<>();
         for (int i = 0; i < array.length; i++) {
-            lista.add(new HashSet<Character>());
-            Collections.addAll(lista.get(i), array[i].toCharArray());
-            
-            
+            set.clear();
+            for (int j = 0; j < array[i].length(); j++) {
+                set.add(array[i].charAt(j));
+            }
+            lista.add(set.toString().replaceAll(",", "").replaceAll(" +", ""));
         }
+
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {                
-                lista.get(j).;
+            for (int j = 0; j < array[i].length(); j++) {
+                if(mapa.containsKey(lista.get(i).charAt(j))){
+                    mapa.put(lista.get(i).charAt(j), mapa.get(lista.get(i).charAt(j))+1);
+                }
                 
             }
             
