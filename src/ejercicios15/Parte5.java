@@ -16,7 +16,8 @@ import java.util.TreeMap;
  * @author alumno
  */
 public class Parte5 {
-    public static final String RED = "\033[0;31m";
+    public static final String RED = "\033[0;31m"; // rojo
+    public static final String RESET = "\033[0m";  // Text Reset    
     private static java.util.Scanner sc;
     
     /**
@@ -24,29 +25,34 @@ public class Parte5 {
      */
     public static void main(String[] args) {
         TreeMap<Character, LinkedHashSet<String>> mapa = new TreeMap<>();
+        HashSet<String> yaProcesados = new HashSet<>();
         sc = new java.util.Scanner(System.in); 
         System.out.print("Introduce un texto: ");
         String[] array = sc.nextLine().toLowerCase().replaceAll("[^a-z\\d\\s]", "").split("\\s+");
         char letra;
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length(); j++) {
-                letra = array[i].charAt(j);
-                if(!mapa.containsKey(letra)){
-                    mapa.put(letra , new LinkedHashSet<>());
-                    
+            if(!yaProcesados.contains(array[i])){
+                for (int j = 0; j < array[i].length(); j++) {
+                    letra = array[i].charAt(j);
+                    if(!mapa.containsKey(letra)){
+                        mapa.put(letra , new LinkedHashSet<>());
+
+                    }
+                    mapa.get(letra).add(array[i]);
                 }
-                mapa.get(letra).add(array[i]);
             }
+            yaProcesados.add(array[i]);
             
         }
         Iterator<Character> it = mapa.keySet().iterator();
-        
+        System.out.println("");
         while (it.hasNext()) {
             Character next = it.next();
             
-            System.out.println(next + ": " + mapa.get(next).size() +" -> " + mapa.get(next));
+            System.out.println(next + ": " + mapa.get(next).size() +" -> " + mapa.get(next).toString().replaceAll(next + "", RED + next + RESET));
             
         }
+        System.out.println("");
         
     }
     
@@ -79,7 +85,7 @@ public class Parte5 {
 //        while (it.hasNext()) {
 //            String next = it.next();
 //            
-//            System.out.println(next + " -> " + mapa.get(next));
+//            System.out.println(next + " -> " + mapa.get(next).toString().replaceAll(next + "", RED + next + RESET));
 //            
 //        }
 //        
