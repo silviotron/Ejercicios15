@@ -26,6 +26,7 @@ public class Ejercicios15 {
             System.out.println("* 3. Parte 3   *");
             System.out.println("* 4. Parte 4   *");
             System.out.println("* 5. Parte 5   *");
+            System.out.println("* 6. Pilas     *");
             System.out.println("* 0. Salir     *");
             System.out.println("****************");
             seleccion = sc.nextLine();
@@ -45,7 +46,10 @@ public class Ejercicios15 {
                 case "5":
                     //Parte5.main(args);
                     Parte5.miVersion();
-                    break;                    
+                    break;
+                case "6":
+                    Pilas.primero();
+                    break;                     
                 case "0":
                     break;
                 default:
