@@ -43,7 +43,8 @@ public class Ejercicios15 {
                     Parte4.main(args);
                     break;                    
                 case "5":
-                    Parte5.main(args);
+                    //Parte5.main(args);
+                    Parte5.miVersion();
                     break;                    
                 case "0":
                     break;
