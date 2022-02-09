@@ -37,14 +37,13 @@ public class Pilas {
             } else {
                 System.out.println("ERR0R.");
             }
-        } while (base <= 0);
+        } while (base < 2 || base > 10);
 
-        do {
+        while (numero > 0){
             resto.add(numero % base);
             numero = numero / base;
 
-        } while (numero / base != 0);
-        resto.add(numero % base);
+        }
         System.out.println("");
         while (!resto.empty()) {
             System.out.print(resto.pop());
@@ -77,6 +76,9 @@ public class Pilas {
                 break;
             case 9:
                 subindice = "\u2089";
+                break;
+            case 10:
+                subindice = "\u2081\u2089";
                 break;
         }
         System.out.println(subindice);
